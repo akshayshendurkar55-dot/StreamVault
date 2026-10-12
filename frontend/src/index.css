@@ -440,3 +440,472 @@ footer {
     font-size: 36px;
   }
 }
+
+/* =========================
+   Stream Player Modal / View
+========================= */
+
+.player-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: #000;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+}
+
+.player-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 4%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9) 20%, transparent);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+}
+
+.player-back-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.player-back-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(-2px);
+}
+
+.player-title-info {
+  text-align: right;
+}
+
+.player-title-info h2 {
+  font-size: 18px;
+  margin: 0;
+  color: #fff;
+}
+
+.player-title-info p {
+  font-size: 13px;
+  color: #aaa;
+  margin: 3px 0 0;
+}
+
+.player-video-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.player-video {
+  width: 100%;
+  height: 100%;
+  max-height: 100vh;
+  object-fit: contain;
+  background: #000;
+  outline: none;
+}
+
+.player-status-overlay {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #fff;
+  background: rgba(15, 15, 15, 0.88);
+  padding: 28px 36px;
+  border-radius: 10px;
+  border: 1px solid #333;
+  text-align: center;
+  max-width: 480px;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+}
+
+.player-spinner {
+  width: 44px;
+  height: 44px;
+  border: 4px solid rgba(255, 255, 255, 0.15);
+  border-top-color: #e50914;
+  border-radius: 50%;
+  animation: player-spin 0.8s linear infinite;
+}
+
+@keyframes player-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.player-error-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #ff6b6b;
+  margin: 0;
+}
+
+.player-error-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.player-retry-btn {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.player-retry-btn:hover {
+  background: #f40612;
+}
+
+.player-close-btn {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 10px 18px;
+  border-radius: 5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.player-close-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+@media (max-width: 768px) {
+  .player-header {
+    padding: 14px 4%;
+  }
+
+  .player-title-info h2 {
+    font-size: 15px;
+  }
+
+  .player-title-info p {
+    font-size: 11px;
+  }
+}
+
+/* =========================
+   Navbar Auth & User Profile
+========================= */
+
+.nav-auth {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile-menu {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-name {
+  color: #eee;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.signout-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ddd;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 7px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.signout-btn:hover {
+  background: rgba(229, 9, 20, 0.8);
+  border-color: #e50914;
+  color: #fff;
+}
+
+/* =========================
+   Authentication Pages
+========================= */
+
+.auth-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: radial-gradient(circle at top, #1a1a1a 0%, #0b0b0b 70%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 440px;
+  background: #141414;
+  border: 1px solid #282828;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.auth-logo {
+  display: inline-block;
+  font-size: 26px;
+  font-weight: 800;
+  color: #e50914;
+  text-decoration: none;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+
+.auth-card h1 {
+  font-size: 28px;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.auth-subtitle {
+  color: #888;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 28px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  text-align: left;
+}
+
+.form-group label {
+  font-size: 13px;
+  color: #bbb;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 14px;
+  background: #222;
+  border: 1px solid #333;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  border-color: #e50914;
+  background: #282828;
+}
+
+.auth-error {
+  background: rgba(229, 9, 20, 0.15);
+  border: 1px solid rgba(229, 9, 20, 0.4);
+  color: #ff6b6b;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.auth-success {
+  background: rgba(46, 204, 113, 0.15);
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  color: #2ecc71;
+  padding: 10px 14px;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.auth-submit {
+  background: #e50914;
+  color: #fff;
+  border: none;
+  padding: 13px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background 0.2s ease;
+}
+
+.auth-submit:hover:not(:disabled) {
+  background: #f40612;
+}
+
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.auth-switch {
+  text-align: center;
+  color: #888;
+  font-size: 14px;
+  margin-top: 24px;
+}
+
+.auth-switch a {
+  color: #fff;
+  text-decoration: underline;
+  margin-left: 4px;
+}
+
+.auth-footer-link {
+  text-align: center;
+  margin-top: 16px;
+}
+
+.auth-footer-link a {
+  color: #666;
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s ease;
+}
+
+.auth-footer-link a:hover {
+  color: #aaa;
+}
+
+/* =========================
+   Search & Filter in Movies
+========================= */
+
+.search-bar-container {
+  margin-top: 20px;
+  max-width: 480px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 18px;
+  background: #181818;
+  border: 1px solid #333;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.search-input:focus {
+  border-color: #e50914;
+  background: #202020;
+}
+
+/* =========================
+   My List Button State & Toast
+========================= */
+
+.list-btn.active-in-list {
+  background: rgba(46, 204, 113, 0.25);
+  border: 1px solid rgba(46, 204, 113, 0.5);
+  color: #2ecc71;
+}
+
+.action-feedback-toast {
+  display: inline-block;
+  margin-top: 15px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 1px solid #444;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 5px;
+  font-size: 13px;
+  backdrop-filter: blur(6px);
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =========================
+   My List Item Container & Remove Button
+========================= */
+
+.movie-card-container {
+  display: flex;
+  flex-direction: column;
+  background: #181818;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #222;
+  transition: border-color 0.2s ease;
+}
+
+.movie-card-container:hover {
+  border-color: #383838;
+}
+
+.movie-card-container .movie-card {
+  flex: 1;
+  background: transparent;
+  transform: none;
+}
+
+.movie-card-container .movie-card:hover {
+  transform: none;
+}
+
+.remove-from-list-btn {
+  background: #1c1c1c;
+  color: #aaa;
+  border: none;
+  border-top: 1px solid #282828;
+  padding: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remove-from-list-btn:hover:not(:disabled) {
+  background: rgba(229, 9, 20, 0.2);
+  color: #ff6b6b;
+}
+
+.remove-from-list-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
